@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './image/logo.svg';
-import './style/App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './style/App.css';
+//import Board from './components/Board'
+function Welcome(props) {
+  return <h1>Helllo, {props.name}</h1>
 }
 
-export default App;
+ class Welcomes extends React.Component{
+  constructor(props) {
+    super(props)
+  }
+  render() {
+    return (
+      <h2>Helllo, {this.props.name}</h2>
+    )
+  }
+}
+export default class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <Welcome name='react'></Welcome>
+        <Welcome name='reactDom'></Welcome>
+        <Welcome name='reactComponent'></Welcome>
+        <Welcomes name='react'></Welcomes>
+        <Welcomes name='reactDom'></Welcomes>
+        <Welcomes name='reactComponent'></Welcomes>
+      </div>
+    )
+  }
+}
+
